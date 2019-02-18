@@ -1,0 +1,66 @@
+body {
+	height: 100%;
+}
+
+body {
+	background:;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	padding-bottom: 40px;
+	background-image:
+		url('https://cdn.shopify.com/s/files/1/0185/4636/products/MarkoManev_AkiraBike_Sq_2000x.png?v=1530346610');
+	background-repeat: no-repeat;
+	background-position: 1350px 570px;
+	background-size:500px;
+	width: 100%;
+}
+
+.Tudo {
+	width: 100%;
+	max-width: 320px;
+	padding: 15px;
+	margin: auto;
+	box-sizing: border-box;
+	text-align: left !important;
+	border: solid 1px #5b5b5b;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.botao {
+	background-color: #f3f3f3;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	border: 2px solid gray;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 12px;
+	padding: 14px 31px;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.botao:hover {
+	background-color: #ffffff;
+}
+
+.botao:active {
+	position: relative;
+	top: 1px;
+}
+
+.imagem {
+	width: "150";
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: cover;
+	width: 140px;
+	display: block;
+	"
+}

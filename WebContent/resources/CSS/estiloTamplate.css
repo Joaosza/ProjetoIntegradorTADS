@@ -1,0 +1,155 @@
+.header {
+	background: #111;
+	padding: 5px;
+	color: white;
+}
+
+.TextoMenuCentro {
+	text-align: center;
+}
+
+body {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: auto;
+	font-family: "Lato", sans-serif;
+	transition: background-color .5s;
+	margin-top: auto;
+}
+
+#ImagemBackGround {
+	float: right;
+}
+
+.button {
+	background-color: #111; /* Green */
+	border: none;
+	padding: 9px 20px;
+	text-align: center;
+	font-size: 16px;
+	color: #918e8e;
+	margin: 4px 2px;
+	line-height: 1.0rem;
+	text-decoration: none;
+	font-size: 24px;
+	color: #818181;
+	height: 100%;
+}
+
+.buttonMenu {
+	background-color: #111; /* Green */
+	border: none;
+	color: white;
+	padding: 20px 32px;
+	cursor: pointer;
+	padding: .25rem .75rem;
+	font-size: 2.00rem;
+	border: 1px solid transparent;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: auto;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+#main {
+	transition: margin-left .1000s;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	padding: 12px 16px;
+	z-index: 1;
+	font-family: "Lato", sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+#rodape {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	margin-left: 0;
+	z-index: 100;
+	background-color: #ffffff;
+}
+
+#tudo {
+	padding-bottom: 120px;
+}
+
+#footer-left {
+	font-size: 15px;
+	line-height: 11px;
+	padding: 10px 0 10px 0px;
+	border-top: 1px solid gray;
+	height: 12px;
+}
+
+.H3center {
+	text-align: center;
+}
+
+.CentralizarFormularioCadastroPG {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.FooterCentralizar {
+	text-align: center;
+}
+
+.ImagemFundoPrincipal {
+	margin-top:100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<h:head>
+
+	<!-- Importação do Estilo de CSS -->
+	<link rel="stylesheet" href="./resources/CSS/estiloTamplate.css"></link>
+	<!--Fim da Importação do Estilo de CSS -->
+
+
+	<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+		crossorigin="anonymous"></link>
+
+	<script>
+
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "250px";
+	    document.getElementById("main").style.marginLeft = "250px";
+	}
+
+	
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";
+	    document.getElementById("main").style.marginLeft = "0";
+	} 
+</script>
+
+</h:head>
+
+<h:body style="background-color: #d3d3d3 ;">
+
+	<!-- Conteudo aqui pra barra lateral empurra pro lado -->
+
+	<div id="main">
+
+		<div class="header">
+
+			<!-- Imagem Akira -->
+
+			<div id="ImagemBackGround">
+				<img src="./resources/imagens/1200px-Logo_Akira.svg.png"
+					style="width: 100px; height: 50px;"></img>
+			</div>
+			<!-- Imagem Akira Fim -->
+
+
+
+			<!-- BOTAO MENU -->
+
+			<button class="buttonMenu" onclick="openNav()"
+				style="vertical-align: middle; padding: 5;">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<!-- BOTAO MENU FIM-->
+
+			<!-- Div Texto -->
+			<div class="TextoMenuCentro">
+
+				<h1>Projeto Akira</h1>
+
+
+
+				<p>BackHand - Felipe Batista</p>
+				<p>FrontHand - Yuri W, Fernando
+					Bandidão e João Safadão</p>
+			</div>
+
+			<!-- Div Texto Fim-->
+
+
+		</div>
+
+		<div id="rodape">
+			<ui:insert name="rodape">
+				<ui:include src="/rodape.xhtml" />
+			</ui:insert>
+		</div>
+
+	</div>
+
+	<ui:insert name="corpo">
+		conteudo
+	</ui:insert>
+
+
+	<!-- MENU LATERAL CONTEUDO-->
+
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+		<a href="principal.xhtml">Inicio</a><br />
+
+		<div class="dropdown">
+			<span class="button"
+				style="background-color: #111; text-align: center;">
+				Cadastros <i class="fa fa-caret-down"></i>
+			</span>
+
+
+
+
+
+			<div class="dropdown-content">
+
+				<a href="cadastroCliente.xhtml">Cadastro de Cliente </a> <br /> <a
+					href="cadastroDependente.xhtml">Cadastro de Dependente </a><br />
+				<a href="cadastroEmpregado.xhtml">Cadastro de Empregado</a> <br />
+				<a href="cadastroFilme.xhtml">Cadastro de Filme</a><br /> <a
+					href="cadastroGenero.xhtml">Cadastro de Genero</a><br /> <a
+					href="cadastroJogos.xhtml">Cadastro de Jogos</a><br /> <a
+					href="cadastroProdutora.xhtml">Cadastro de Produtora</a><br />
+
+			</div>
+		</div>
+		<div>
+			<a href="locacao.xhtml">Locação</a> <a href="relatorios.xhtml">Relatorios</a>
+			<a href="./j_spring_security_logout">Sair</a>
+
+		</div>
+
+	</div>
+	<!-- MENU LATERAL CONTEUDO FIM-->
+
+</h:body>
+</html>
+

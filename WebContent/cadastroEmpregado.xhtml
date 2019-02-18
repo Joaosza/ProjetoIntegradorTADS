@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+
+
+<ui:composition template="template.xhtml">
+	<ui:define name="corpo">
+		<br />
+
+		<h3 class="H3center">Cadastro de Empregado</h3>
+
+
+		<br />
+		<br />
+		<div id="tudo">
+
+
+			<div id="conteudo">
+
+				<div class="center-form">
+					<h:form id="formularioCadastroEmpregado">
+						<h:panelGrid class="CentralizarFormularioCadastroPG" columns="2" cellpadding="10">
+
+							<h:panelGrid columns="1">
+								
+								Nome :<p:inputText id="nomeEmpregado"
+									value="#{empregadoMB.empregado.nome}" required="true"
+									requiredMessage="Preencha o nome" />
+								<p:message for="nomeEmpregado" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+								
+								Data De Nascimento :<p:calendar id="DataNascimento"
+									value="#{clienteMB.cliente.dtNasc}" locale="de"
+									navigator="true" pattern="dd-mm-yyyy"
+									requiredMessage="Prenncha Nascimento" required="true" />
+								<p:message for="DataNascimento" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+							
+								Rg :<p:inputMask mask="**.***.***-*" id="rgEmpregado"
+									value="#{empregadoMB.empregado.rg}" required="true"
+									requiredMessage="Preencha o rg" />
+								<p:message for="rgEmpregado" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+								
+								Cpf :<p:inputMask mask="***.***.***-**" id="cpfEmpregado"
+									value="#{empregadoMB.empregado.cpf}" required="true"
+									requiredMessage="Preencha o cpf" />
+								<p:message for="cpfEmpregado" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+							
+								Endereço :<p:inputText id="enderecoEmpregado"
+									value="#{empregadoMB.empregado.endereco}" required="true"
+									requiredMessage="Preencha o endereco" />
+								<p:message for="enderecoEmpregado" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+								
+								E-Mail :<p:inputText id="emailEmpregado"
+									value="#{empregadoMB.empregado.email}" required="true"
+									requiredMessage="Preencha o email" />
+								<p:message for="emailEmpregado" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+							
+								Login :<p:inputText id="loginEmpregado"
+									value="#{empregadoMB.empregado.login}" required="true"
+									requiredMessage="Preencha o login" />
+								<p:message for="loginEmpregado" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1">
+								
+								Senha :<p:password id="senhaEmpregado"
+									value="#{empregadoMB.empregado.senha}" required="true"
+									requiredMessage="Preencha a senha" />
+								<p:message for="senhaEmpregado" />
+							</h:panelGrid>
+
+
+
+							<h:panelGrid columns="1">
+
+								
+								<p:selectOneMenu id="permissao"
+									value="#{empregadoMB.empregado.perfil}">
+									<f:selectItem itemLabel="Administrador"
+										itemValue="Administrador" />
+									<f:selectItem itemLabel="Vendedor" itemValue="Vendedor" />
+								</p:selectOneMenu>
+								<p:message for="permissao" />
+
+							</h:panelGrid>
+
+
+							<p:commandButton update="@form" value="Cadastrar"
+								actionListener="#{empregadoMB.inserir()}" />
+
+						</h:panelGrid>
+					</h:form>
+
+					<div id="rodape" style="">
+						<ui:insert name="rodape">
+							<ui:include src="/rodape.xhtml" />
+						</ui:insert>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+
+</html>

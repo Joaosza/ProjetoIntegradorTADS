@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+
+	<link rel="stylesheet" href="./resources/CSS/estiloTelaLogin.css"></link>
+
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous"></link>
+
+
+</h:head>
+
+<h:body>
+
+
+	<div class="Tudo">
+		<div>
+
+			<form id="LoginForm" action="j_spring_security_check" method="post">
+				<div class="">
+					<div class="box">
+
+						<h:outputText value="E-mail ou senha incorretos"
+							rendered="#{param.error==true}" />
+
+						<h:panelGrid columns="1"
+							styleClass="col-md-12  col-xs-12 , w3-panel w3-border-top w3-border-bottom">
+
+
+							<!-- Imagem de Fundo -->
+
+							<div>
+								<img class="imagem"
+									src="./resources/imagens/akira_Logo_Login.png"></img>
+
+
+							</div>
+
+							<!--Fima Da Imagem  -->
+
+							<br />
+							<br />
+							<br />
+
+							<!-- Começo Do Form Login  -->
+
+
+							<div id="frmLogin">
+								<label style="color: black;" class="campo"> E-mail</label>
+
+
+								<p:inputText required="true" id="j_username"
+									placeholder="Digite seu e-mail"
+									styleClass="col-md-12 col-xs-12" />
+
+								<br /> <label style="color: black;" class="campo">
+									Senha</label>
+
+								<p:password required="true" id="j_password"
+									styleClass="col-md-12 col-xs-12" placeholder="Digite sua senha" />
+
+
+								<br />
+
+								<!-- BOTAO -->
+
+								<h:commandButton value="Entrar" class="botao"
+									style="width: 100px;height: 45px; color: black; margin-left: auto; margin-right: auto"></h:commandButton>
+
+								<!-- FIM BOTAO -->
+
+								<br />
+
+
+								<div id="Esqueceusenha" style="text-align: center">
+									<span style="color: black;">Esqueceu a senha?</span> <a
+										href="recuperar-senha.jsf">Recuperar</a>
+								</div>
+
+							</div>
+							<!-- Final Do Form Login  -->
+
+
+						</h:panelGrid>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+
+	<div id="rodape">
+		<ui:insert name="rodape">
+			<ui:include src="/rodape.xhtml" />
+		</ui:insert>
+	</div>
+
+</h:body>
+</html>

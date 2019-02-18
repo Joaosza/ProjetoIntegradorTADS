@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="template.xhtml">
+	<ui:define name="corpo">
+
+
+		<br />
+		<h3 class="H3center">Cadastro de Dependente</h3>
+		<br />
+		<br />
+
+		<div id="tudo">
+
+
+			<div id="conteudo">
+
+				<div class="center-form">
+
+					<h:form id="formularioCadastroDependente">
+						<h:panelGrid class="CentralizarFormularioCadastroPG" columns="2" cellpadding="10">
+
+							<h:panelGrid columns="1">
+							Nome :<p:inputText id="nomeDependente"
+									value="#{dependenteMB.dependente.nome}" required="true"
+									requiredMessage="Preencha o nome" />
+								<p:message for="nomeDependente" />
+							</h:panelGrid>
+
+
+							<h:panelGrid columns="1">	
+								Data De Nascimento :<p:calendar id="DataNascimento"
+									value="#{clienteMB.cliente.dtNasc}" locale="de"
+									navigator="true" pattern="dd-mm-yyyy"
+									requiredMessage="Prenncha Nascimento" required="true" />
+								<p:message for="DataNascimento" />
+							</h:panelGrid>
+
+
+							<h:panelGrid columns="1">		
+								Cliente :<p:selectOneMenu
+									value="#{dependenteMB.dependente.cliente}"
+									converter="converterCliente">
+									<f:selectItems value="#{clienteMB.clientes}" var="cli"
+										itemLabel="#{cli.nome}" itemValue="#{cli}" />
+								</p:selectOneMenu>
+							</h:panelGrid>
+
+
+							<h:panelGrid columns="1">
+								Dependente :<p:inputText id="parentescoDependente"
+									value="#{dependenteMB.dependente.parentesco}" required="true"
+									requiredMessage="Preencha o parentesco" />
+								<p:message for="parentescoDependente" />
+							</h:panelGrid>
+
+
+							<p:commandButton update="@form,formularioTabelaDependente"
+								value="Cadastrar" actionListener="#{dependenteMB.inserir()}" />
+
+
+						</h:panelGrid>
+					</h:form>
+
+				</div>
+				<br /> <br />
+
+				<h:form id="formularioTabelaDependente">
+					<p:dataTable var="dep" value="#{dependenteMB.listaDependentes}">
+						<p:column headerText="Id">
+							<h:outputText value="#{dep.id}" />
+						</p:column>
+						<p:column headerText="Nome">
+							<h:outputText value="#{dep.nome}" />
+						</p:column>
+						<p:column headerText="Idade">
+							<h:outputText value="#{dep.dtNasc}" />
+						</p:column>
+						<p:column headerText="Parentesco">
+							<h:outputText value="#{dep.parentesco}" />
+						</p:column>
+
+						<p:column headerText="Opções">
+							<p:commandButton value="Alterar"
+								update="formularioCadastroDependente">
+								<f:setPropertyActionListener value="#{dep}"
+									target="#{dependenteMB.dependente}" />
+							</p:commandButton>
+							<p:commandButton value="Excluir"
+								actionListener="#{dependenteMB.excluir(dep.id)}" update="@form">
+								<p:confirm header="Confirmação"
+									message="Deseja excluir o dependente?" icon="ui-icon-alert" />
+							</p:commandButton>
+						</p:column>
+					</p:dataTable>
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="Sim" type="button"
+							styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+						<p:commandButton value="Não" type="button"
+							styleClass="ui-confirmdialog-no" icon="ui-icon-check" />
+					</p:confirmDialog>
+				</h:form>
+
+				<div id="rodape">
+					<ui:insert name="rodape">
+						<ui:include src="/rodape.xhtml" />
+					</ui:insert>
+				</div>
+			</div>
+
+		</div>
+
+	</ui:define>
+</ui:composition>
+
+
+
+
+</html>
